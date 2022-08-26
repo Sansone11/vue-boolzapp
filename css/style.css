@@ -51,6 +51,11 @@ li {
 .menu>ul{
     display: flex;
     text-decoration: none;
+    
+}
+
+.menu>i{
+    height: 30px;
 }
 
 .img__text{
@@ -58,6 +63,20 @@ li {
 }
 
 img{
+    height: 30px;
+    border-radius: 50%;
+}
+
+H2{
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+.user__card,a{
+    font-size: 12px;
+}
+
+.fa-bell-slash{
     height: 30px;
     border-radius: 50%;
 }
