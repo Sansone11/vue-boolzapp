@@ -2,7 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: solid 2px rgb(128, 126, 126);
+    border: solid 2px rgb(128, 126, 126); 
+}
+
+
+:root{
+    --bg-chat:#E0D9D1;
+    --bg-active:#8EDAFC;
+    --bg-hover:#E9EBEB;
+    --bg-chat-user:#D5F9BA;
+    --bg-footer-chat:#F3EEEA;
+    --bg-color-write:#B1B2B5;
 }
 
 ul,
@@ -19,11 +29,11 @@ li {
 }
 
 .screen__container{
-    min-height: 80%;
+    /* min-height: 80%; */
     min-width: 80%;
     display: flex;
     flex-direction: row;
-    background-color:lightgray;
+    background-color:white;
 }
 
 .user__wrapper{
@@ -34,11 +44,18 @@ li {
 .message__wrapper{
     height: 500px;
     flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
 }
 
 .user__card{
     width: 100%;
     max-height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+    align-items: center;
+    /* margin-bottom: 5px; */
 }
 
 .nav__card{
@@ -46,6 +63,11 @@ li {
     flex-direction: row;
     justify-content: space-between;
     height: 100%;
+}
+
+.chat__display{
+    flex-grow: 1;
+    background-color: var(--bg-chat);
 }
 
 .menu>ul{
@@ -56,10 +78,12 @@ li {
 
 .menu>i{
     height: 30px;
+    align-items: center;
 }
 
 .img__text{
     display: flex;
+    align-items: center;
 }
 
 img{
@@ -67,16 +91,57 @@ img{
     border-radius: 50%;
 }
 
+.img__text>.fa-bell-slash,.fa-magnifying-glass{
+    height: 30px;
+    border-radius: 50%;
+}
+
 H2{
     font-size: 12px;
-    text-align: center;
-    vertical-align: middle;
-}
+} 
+
 .user__card,a{
     font-size: 12px;
+}
+
+.active{
+    background-color: var(--bg-active);
 }
 
 .fa-bell-slash{
     height: 30px;
     border-radius: 50%;
+}
+
+.avatar{
+    display:inline-block;
+    margin-left: 10px;
+    margin-right: 10px; 
+}
+
+.player{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    height: 9%;
+    background-color: var(--bg-footer-chat);
+}
+
+.write{
+    flex-grow: 1;
+    justify-items: center;
+}
+
+.write input{
+    border-radius: 5px;
+    color: #E9EBEB;
+    align-self: center;
+    width: 100%;
+    min-height: 30px;
+}
+
+.player__img{
+    flex-basis: 20%;
+    min-height: 30px;
 }
