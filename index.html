@@ -127,9 +127,9 @@
         <main class="message__wrapper">
             <div  class="user__card nav__card">
                 <div v-for ="contact,index in contacts" class="img__text">
-                    <div :class="contact.name === 'index'? 'active':''">
-                    <span class="avatar"><img :src="./index/`${contact.avatar}`" alt=""></span>
-                    <h2  class="talker">{{contact.name}}</h2>
+                    <div class="">
+                    <span class="avatar"><img v-if="index===active" :src="`./assets/${contact.avatar}`"></span>
+                    <h2 v-if="index===active" class="talker">{{contact.name}}</h2>
                     </div>
                 </div>
                 <div class="menu">
