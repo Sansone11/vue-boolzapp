@@ -34,7 +34,7 @@ a {
 }
 
 .screen__container{
-    /* min-height: 80%; */
+    height: 95%;
     min-width: 80%;
     display: flex;
     flex-direction: row;
@@ -42,19 +42,22 @@ a {
 }
 
 .user__wrapper{
-    height: 500px;
-    flex-basis: 40%;
+    height: 100%;
+    flex-basis: 400px;
 }
 
 .nav__card{
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
+    width: 100%;
+    height: 100%;
 }
 
 .message__wrapper{
-    height: 500px;
+    height: 100%;
     flex-basis: 60%;
     display: flex;
     flex-direction: column;
@@ -67,15 +70,20 @@ a {
     flex-direction: row;
     align-items: center;
     font-size: 12px;
-    border-right: 1px solid var(--bg-hover) ;
+    border-right: 1px solid var(--bg-hover);
 
 }
 
-.nav__card{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 100%;
+.button{
+    margin-right: 9px
+}
+
+.search__user{
+    width: 200px;
+    height: 30px;
+    border: none;
+    font-size: 10px;
+    margin-left: 20px;
 }
 
 .chat__display{
@@ -90,8 +98,8 @@ a {
 .message{
     border-radius: 8px;
     font-size: 12px;
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column; 
 }
 
 .message .sent{
@@ -109,27 +117,29 @@ a {
 }
 
 .menu>ul{
-    display: flex;
-    align-self: center;
+        display: flex;
+    gap: 10px;
 }
 
-.menu>i{
-    height: 30px;
+.menu{
+    display: flex;
+    align-items: center;
 }
 
 .contact{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     padding: 8px 5px 8px 12px;
     border-top: 1 px solid var(--bg-chat);
+    gap: 10px;
 }
 
 .img__text{
     display: flex;
     align-items: center;
+    margin-left: 8px;
 
-}
-
-.img__text>i{
-    align-self: center;
 }
 
 img{
@@ -152,7 +162,6 @@ span{
 }
 
 .img__text>.fa-bell-slash,.fa-magnifying-glass{
-    height: 30px;
     border-radius: 50%;
 }
 
@@ -168,14 +177,9 @@ H2{
     background-color: var(--bg-active);
 }
 
-.fa-bell-slash{
-    height: 30px;
-    border-radius: 50%;
-}
-
 .avatar{
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
     align-items: center;
 }
 
@@ -195,7 +199,7 @@ H2{
 
 .write input{
     border-radius: 5px;
-    color: #E9EBEB;
+    color: #161616;
     align-self: center;
     width: 100%;
     min-height: 30px;
@@ -204,6 +208,9 @@ H2{
 .player__img{
     flex-basis: 20%;
     min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .message{

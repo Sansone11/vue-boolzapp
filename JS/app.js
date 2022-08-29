@@ -1,6 +1,6 @@
 console.log('JS ok');
 
- const contacts = [
+const contacts = [
     {
         name: 'Michele',
         avatar: 'avatar_1.jpg',
@@ -47,7 +47,7 @@ console.log('JS ok');
     },
     {
         name: 'Samuele',
-        avatar:'avatar_3.jpg',
+        avatar: 'avatar_3.jpg',
         visible: true,
         messages: [
             {
@@ -69,7 +69,7 @@ console.log('JS ok');
     },
     {
         name: 'Alessandro B.',
-        avatar:'avatar_4.jpg',
+        avatar: 'avatar_4.jpg',
         visible: true,
         messages: [
             {
@@ -164,13 +164,20 @@ console.log('JS ok');
     },
 ]
 
-const app = new Vue ({
-    el:'#root',
-    data:{
+const userText = []
+
+const app = new Vue({
+    el: '#root',
+    data: {
         contacts,
-        active:0,
+        active: 0,
     },
-    methods:{
-        
-    },
-})
+    methods: {
+        userMessage: function(){
+            console.log(this.userMessage.value)
+        }
+        //     onEnterClick: function() {
+        //         this.msg = 'on enter event';  
+        // },
+    }
+});

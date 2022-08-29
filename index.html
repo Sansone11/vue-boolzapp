@@ -20,7 +20,7 @@
                     <h2>Sofia</h2>
                 </div>
                 <div class="menu">
-                    <ul>
+                    <ul class="button">
                         <li><i class="fa-solid fa-circle-notch"></i></li>
                         <li><i class="fa-solid fa-message"></i></li>
                         <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
@@ -37,7 +37,7 @@
             <div class="user__card">
                 <div class="img__text">
                     <span class="avatar"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input type="text" value="Cerca o inizia una nuova chat"
+                    <input class="search__user" type="text" value="Cerca o inizia una nuova chat"
                         placeholder="Cerca o inizia una nuova chat">
                 </div>
             </div>
@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <div class="menu">
-                    <ul>
+                    <ul class="button">
                         <li><i class="fa-solid fa-magnifying-glass"></i></li>
                         <li><i class="fa-solid fa-paperclip"></i></li>
                         <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
@@ -144,8 +144,8 @@
                 <div v-for="contact,index in contacts[active].messages " class="message">
                     <div :class="contact.status === 'sent'?'sent':'received'">{{contact.message}}</div>
                 </div>
-                <!-- <div class="message sent">
-                    tutto ok
+                <div class="message sent"> 
+                    
                 </div>
                 <div class="message sent">
                     come stai?
@@ -153,14 +153,14 @@
                 <div class="message received">
                     ciao
                 </div>
-                <div></div> -->
+                <div></div> 
             </div>
             <div class="user__card player">
                 <div class="img__text player__img">
                     <span class="avatar"><i class="fa-solid fa-face-smile"></i></span>
                 </div>
                 <div class="write">
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" v-on:keyup.enter="userMessage" placeholder="Scrivi un messaggio" value="">
                 </div>
                 <div class="img__text player__img">
                     <span class="avatar"><i class="fa-solid fa-microphone"></i></span>
