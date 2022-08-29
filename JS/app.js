@@ -168,7 +168,7 @@ const app = new Vue ({
     el:'#root',
     data:{
         contacts,
-        active:-1,
+        active:0,
     },
     methods:{
         

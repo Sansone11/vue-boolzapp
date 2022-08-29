@@ -125,10 +125,12 @@
             </ul>
         </aside>
         <main class="message__wrapper">
-            <div class="user__card nav__card">
-                <div class="img__text">
-                    <span class="avatar"><img src="./assets/avatar_1.jpg" alt=""></span>
-                    <h2>Michele</h2>
+            <div  class="user__card nav__card">
+                <div v-for ="contact,index in contacts" class="img__text">
+                    <div :class="contact.name === 'index'? 'active':''">
+                    <span class="avatar"><img :src="./index/`${contact.avatar}`" alt=""></span>
+                    <h2  class="talker">{{contact.name}}</h2>
+                    </div>
                 </div>
                 <div class="menu">
                     <ul>
@@ -139,8 +141,8 @@
                 </div>
             </div>
             <div class="chat__display">
-                <div v-for="contact,index in contacts[0].messages " class="message">
-                    <div :class="contact.status === 'sent'? true 'sent':'received'">{{contact.message}}</div>
+                <div v-for="contact,index in contacts[active].messages " class="message">
+                    <div :class="contact.status === 'sent'?'sent':'received'">{{contact.message}}</div>
                 </div>
                 <!-- <div class="message sent">
                     tutto ok

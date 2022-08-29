@@ -94,14 +94,14 @@ a {
     flex-direction: column; */
 }
 
-.message.sent{
+.message .sent{
     align-self: flex-end;
     background-color: var(--bg-chat-user);
     height: 40px;
     width: 90px;
 }
 
-.message.received{
+.message .received{
     align-self: flex-start;
     background-color: white;
     height: 40px;
