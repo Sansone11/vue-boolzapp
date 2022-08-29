@@ -139,8 +139,8 @@
                 </div>
             </div>
             <div class="chat__display">
-                <div v-for class="message">
-
+                <div v-for="contact,index in contacts[0].messages " class="message">
+                    <div :class="contact.status === 'sent'? true 'sent':'received'">{{contact.message}}</div>
                 </div>
                 <!-- <div class="message sent">
                     tutto ok
