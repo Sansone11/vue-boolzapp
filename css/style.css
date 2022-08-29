@@ -71,6 +71,7 @@ a {
     align-items: center;
     font-size: 12px;
     border-right: 1px solid var(--bg-hover);
+    margin-left: 8px;
 
 }
 
@@ -183,6 +184,11 @@ H2{
     align-items: center;
 }
 
+p{
+    font-size: 8px;
+    color: var(--bg-color-write);
+}
+
 .player{
     display: flex;
     flex-direction: row;
@@ -203,6 +209,7 @@ H2{
     align-self: center;
     width: 100%;
     min-height: 30px;
+    font-size: 10px;
 }
 
 .player__img{
