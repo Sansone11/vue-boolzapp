@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,25 +10,26 @@
     <script src="https://kit.fontawesome.com/2187b82d38.js" crossorigin="anonymous"></script>
     <title>Vue-Boolzapp</title>
 </head>
+
 <body class="back__color">
-    <div class="screen__container">
+    <div class="screen__container" id="root">
         <aside class="user__wrapper">
             <div class="user__card nav__card">
                 <div class="img__text">
                     <span class="avatar"><img src="./assets/avatar_io.jpg" alt=""></span>
                     <h2>Sofia</h2>
                 </div>
-               <div class="menu">
-                <ul>
-                    <li><i class="fa-thin fa-circle-dashed"></i></li>
-                    <li><i class="fa-duotone fa-message"></i></li>
-                    <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
-                </ul>
-               </div>
+                <div class="menu">
+                    <ul>
+                        <li><i class="fa-solid fa-circle-notch"></i></li>
+                        <li><i class="fa-solid fa-message"></i></li>
+                        <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                    </ul>
+                </div>
             </div>
             <div class="user__card active">
                 <div class="img__text">
-                    <span class="avatar"><i class="fa-solid fa-bell-slash"></i></span>
+                        <i class="fa-solid fa-bell-slash avatar"></i>
                     <h2>ricevi notifiche di nuovi messaggi</h2>
                     <a href="#">Attiva notifiche desktop</a>
                 </div>
@@ -35,57 +37,92 @@
             <div class="user__card">
                 <div class="img__text">
                     <span class="avatar"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <h5>Cerca o inizia una nuova chat</h5>
+                    <input type="text" value="Cerca o inizia una nuova chat"
+                        placeholder="Cerca o inizia una nuova chat">
                 </div>
             </div>
-            <div class="user__card">
-                <div class="img__text">
-                    <span class="avatar"><img src="./assets/avatar_1.jpg" alt=""></span>
-                    <h2>Michele</h2>
-                </div>
-            </div>
-            <div class="user__card">
-                <div class="img__text">
-                    <span class="avatar"><img src="./assets/avatar_2.jpg" alt=""></span>
-                    <h2>Fabio</h2>
-                </div>
-            </div>
-            <div class="user__card">
-                <div class="img__text">
-                    <span class="avatar"><img src="./assets/avatar_3.jpg" alt=""></span>
-                    <h2>Samuele</h2>
-                </div>
-            </div>
-            <div class="user__card">
-                <div class="img__text">
-                    <span class="avatar"><img src="./assets/avatar_4.jpg" alt=""></span>
-                    <h2>Alessandro B.</h2>
-                </div>
-            </div>
-            <div class="user__card">
-                <div class="img__text">
-                    <span class="avatar"><img src="./assets/avatar_5.jpg" alt=""></span>
-                    <h2>Alessandro L.</h2>
-                </div>
-            </div>
-            <div class="user__card">
-                <div class="img__text">
-                    <span class="avatar"><img src="./assets/avatar_6.jpg" alt=""></span>
-                    <h2>Claudia</h2>
-                </div>
-            </div>
-            <div class="user__card">
-                <div class="img__text">
-                    <span class="avatar"><img src="./assets/avatar_7.jpg" alt=""></span>
-                    <h2>Federico</h2>
-                </div>
-            </div>
-            <div class="user__card">
-                <div class="img__text">
-                    <span class="avatar"><img src="./assets/avatar_8.jpg" alt=""></span>
-                    <h2>Davide</h2>
-                </div>
-            </div>
+            <ul class="contact">
+                <li class="user__card" @click="active=index" v-for="contact,index in contacts"
+                    :class="active===index ? 'active':''">
+                    <div class="img__text">
+                        <span class="avatar"><img :src="`./assets/${contact.avatar}`" alt=""></span>
+                        <div>
+                            <h2>{{contact.name}}</h2>
+                            <p>Ultimo accesso</p>
+                        </div>
+                    </div>
+                    <div class="time">12:00</div>
+                </li>
+                <!-- <li>
+                    <div class="user__card">
+                        <div class="img__text">
+                            <span class="avatar"><img src="./assets/avatar_2.jpg" alt=""></span>
+                            <h2>Fabio</h2>
+                            <p>Ultimo accesso</p>
+                        </div>
+                        <div class="time">12:00</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user__card">
+                        <div class="img__text">
+                            <span class="avatar"><img src="./assets/avatar_3.jpg" alt=""></span>
+                            <h2>Samuele</h2>
+                            <p>Ultimo accesso</p>
+                        </div>
+                        <div class="time">12:00</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user__card">
+                        <div class="img__text">
+                            <span class="avatar"><img src="./assets/avatar_4.jpg" alt=""></span>
+                            <h2>Alessandro B.</h2>
+                            <p>Ultimo accesso</p>
+                        </div>
+                        <div class="time">12:00</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user__card">
+                        <div class="img__text">
+                            <span class="avatar"><img src="./assets/avatar_5.jpg" alt=""></span>
+                            <h2>Alessandro L.</h2>
+                            <p>Ultimo accesso</p>
+                        </div>
+                        <div class="time">12:00</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user__card">
+                        <div class="img__text">
+                            <span class="avatar"><img src="./assets/avatar_6.jpg" alt=""></span>
+                            <h2>Claudia</h2>
+                            <p>Ultimo accesso</p>
+                        </div>
+                        <div class="time">12:00</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user__card">
+                        <div class="img__text">
+                            <span class="avatar"><img src="./assets/avatar_7.jpg" alt=""></span>
+                            <h2>Federico</h2>
+                        </div>
+                        <div class="time">12:00</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user__card">
+                        <div class="img__text">
+                            <span class="avatar"><img src="./assets/avatar_8.jpg" alt=""></span>
+                            <h2>Davide</h2>
+                            <p>Ultimo accesso</p>
+                        </div>
+                        <div class="time">12:00</div>
+                    </div>
+                </li> -->
+            </ul>
         </aside>
         <main class="message__wrapper">
             <div class="user__card nav__card">
@@ -93,16 +130,28 @@
                     <span class="avatar"><img src="./assets/avatar_1.jpg" alt=""></span>
                     <h2>Michele</h2>
                 </div>
-               <div class="menu">
-                <ul>
-                    <li><i class="fa-solid fa-magnifying-glass"></i></li>
-                    <li><i class="fa-solid fa-paperclip"></i></li>
-                    <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
-                </ul>
-               </div>
+                <div class="menu">
+                    <ul>
+                        <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                        <li><i class="fa-solid fa-paperclip"></i></li>
+                        <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                    </ul>
+                </div>
             </div>
             <div class="chat__display">
+                <div v-for class="message">
 
+                </div>
+                <!-- <div class="message sent">
+                    tutto ok
+                </div>
+                <div class="message sent">
+                    come stai?
+                </div>
+                <div class="message received">
+                    ciao
+                </div>
+                <div></div> -->
             </div>
             <div class="user__card player">
                 <div class="img__text player__img">
@@ -120,4 +169,5 @@
     </div>
     <script src="./JS/app.js"></script>
 </body>
+
 </html>

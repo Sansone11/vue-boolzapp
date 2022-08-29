@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: solid 2px rgb(128, 126, 126); 
+    /* border: solid 2px rgb(128, 126, 126);  */
 }
 
 
@@ -15,8 +15,13 @@
     --bg-color-write:#B1B2B5;
 }
 
-ul,
-li {
+ul,li {
+    list-style: none;
+    gap: 10px;
+}
+
+a {
+    color: currentColor;
     text-decoration: none;
 }
 
@@ -41,6 +46,13 @@ li {
     flex-basis: 40%;
 }
 
+.nav__card{
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    gap: 10px;
+}
+
 .message__wrapper{
     height: 500px;
     flex-basis: 60%;
@@ -53,9 +65,10 @@ li {
     max-height: 10%;
     display: flex;
     flex-direction: row;
-    justify-content:start;
     align-items: center;
-    /* margin-bottom: 5px; */
+    font-size: 12px;
+    border-right: 1px solid var(--bg-hover) ;
+
 }
 
 .nav__card{
@@ -67,28 +80,75 @@ li {
 
 .chat__display{
     flex-grow: 1;
-    background-color: var(--bg-chat);
+    background-image: url(../assets/mine.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px;
+    gap:10px
+}
+.message{
+    border-radius: 8px;
+    font-size: 12px;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.message.sent{
+    align-self: flex-end;
+    background-color: var(--bg-chat-user);
+    height: 40px;
+    width: 90px;
+}
+
+.message.received{
+    align-self: flex-start;
+    background-color: white;
+    height: 40px;
+    width: 90px;
 }
 
 .menu>ul{
     display: flex;
-    text-decoration: none;
-    
+    align-self: center;
 }
 
 .menu>i{
     height: 30px;
-    align-items: center;
+}
+
+.contact{
+    padding: 8px 5px 8px 12px;
+    border-top: 1 px solid var(--bg-chat);
 }
 
 .img__text{
     display: flex;
     align-items: center;
+
+}
+
+.img__text>i{
+    align-self: center;
 }
 
 img{
     height: 30px;
     border-radius: 50%;
+    max-width: 100%;
+}
+
+span{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.time{
+    font-size: 10px;
+    color: var(--bg-color-write);
+    margin-left: auto;
+    align-self:flex-start;
 }
 
 .img__text>.fa-bell-slash,.fa-magnifying-glass{
@@ -100,11 +160,11 @@ H2{
     font-size: 12px;
 } 
 
-.user__card,a{
+.user__card a{
     font-size: 12px;
 }
 
-.active{
+.user__card.active{
     background-color: var(--bg-active);
 }
 
@@ -114,9 +174,9 @@ H2{
 }
 
 .avatar{
-    display:inline-block;
-    margin-left: 10px;
-    margin-right: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .player{
@@ -145,3 +205,15 @@ H2{
     flex-basis: 20%;
     min-height: 30px;
 }
+
+.message{
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 8px;
+}
+
