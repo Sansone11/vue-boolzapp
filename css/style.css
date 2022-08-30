@@ -181,6 +181,10 @@ H2 {
     font-size: 12px;
 }
 
+.dnone{
+    display: none;
+}
+
 .user__card.active {
     background-color: var(--bg-active);
 }
