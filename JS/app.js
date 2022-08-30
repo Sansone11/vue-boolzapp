@@ -215,3 +215,19 @@ const app = new Vue({
     // }
 
 });
+
+// lo stesso concetto del computed
+// const newArray = []
+
+
+// contacts.forEach(element=>{
+//     if(element.name.toLowerCase().includes(this.name.toLowerCase()))
+//     newArray.push(element)
+
+// })
+
+// // questo è un filtro
+
+// const newArray2 = contacts.filter((contact) => {
+//           return contact.name.toLowerCase().includes(this.name.toLowerCase());
+//             });

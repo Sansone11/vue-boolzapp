@@ -20,11 +20,6 @@ li {
     list-style: none;
 }
 
-a {
-    color: currentColor;
-    text-decoration: none;
-}
-
 .back__color {
     background: linear-gradient(#009688 10%, #d3dbda 0%);
     height: 100vh;
@@ -77,10 +72,6 @@ a {
 
 .button {
     margin-right: 9px
-}
-
-.note{
-    margin: 0 auto;
 }
 
 .search__user {
@@ -181,10 +172,6 @@ H2 {
     font-size: 12px;
 }
 
-.dnone{
-    display: none;
-}
-
 .user__card.active {
     background-color: var(--bg-active);
 }
@@ -197,6 +184,10 @@ H2 {
 p {
     font-size: 8px;
     color: var(--bg-color-write);
+}
+
+.note>a{
+    color:gray;
 }
 
 i{
