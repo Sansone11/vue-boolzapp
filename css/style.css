@@ -254,7 +254,7 @@ i{
     align-self: flex-start;
     height: 40px;
     width: 150px;
-    background-color: var(--bg-hover);
+    background-color:white;
     border-radius: 10px;
     padding: 5px 8px;
 }

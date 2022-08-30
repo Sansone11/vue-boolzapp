@@ -172,7 +172,9 @@ const app = new Vue({
         contacts,
         active: 0,
         text:'',
+        name:'',
     },
+   
     methods: {
         send() {
             const cleanerText = this.text.trim()
@@ -203,5 +205,13 @@ const app = new Vue({
 
         },
 
-    }
+    },
+    // computed: {
+    //     filterContacts() {
+    //         return contacts.filter((contact) => {
+    //             return contact.name.toLowerCase().includes(this.name.toLowerCase());
+    //         });
+    //     }
+    // }
+
 });

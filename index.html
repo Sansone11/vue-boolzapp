@@ -39,12 +39,17 @@
             <div class="user__card">
                 <div class="img__text">
                     <span class="avatar"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input class="search__user" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input @keyup.enter="user"  class="search__user" type="text" v-model="name"  placeholder="Cerca o inizia una nuova chat">
                 </div>
             </div>
             <ul class="contact">
-                <li class="user__card" @click="active=index" v-for="contact,index in contacts"
-                    :class="active===index ? 'active':''">
+                <li
+                    class="user__card"
+                    @click="active=index"
+                    v-for="contact,index in contacts"
+                    :class="active===index ? 'active':''"
+                    v-show="contact.name.toLowerCase().includes(name.toLowerCase())"
+                >
                     <div class="img__text">
                         <span class="avatar"><img :src="`./assets/${contact.avatar}`" alt=""></span>
                         <div>
