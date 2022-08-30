@@ -132,12 +132,12 @@
         </aside>
         <main class="message__wrapper">
             <div class="user__card nav__card">
-                <div v-for="contact,index in contacts" class="img__text">
-                    <div v-if="index===active" class="online__contact">
-                        <span class="avatar"><img v-if="index===active" :src="`./assets/${contact.avatar}`"></span>
+                <div class="img__text">
+                    <div  class="online__contact">
+                        <span class="avatar"><img :src="`./assets/${contacts[active].avatar}`"></span>
                         <div class="user__online">
-                            <h2 v-if="index===active" class="talker">{{contact.name}}</h2>
-                            <p v-if="index===active">Ultimo accesso...</p>
+                            <h2  class="talker">{{contacts[active].name}}</h2>
+                            <p >Ultimo accesso...</p>
                         </div>
                     </div>
                 </div>
