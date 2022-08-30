@@ -18,7 +18,6 @@
 ul,
 li {
     list-style: none;
-    gap: 10px;
 }
 
 a {
@@ -31,9 +30,6 @@ a {
     height: 100vh;
     margin: 0 auto;
     padding: 30px 70px 0px 70px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
 .screen__container {
@@ -83,6 +79,10 @@ a {
     margin-right: 9px
 }
 
+.note{
+    margin: 0 auto;
+}
+
 .search__user {
     width: 200px;
     height: 30px;
@@ -101,30 +101,8 @@ a {
     gap: 10px
 }
 
-.message {
-    border-radius: 8px;
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-}
-
-.message .sent {
-    align-self: flex-end;
-    background-color: var(--bg-chat-user);
-    height: 40px;
-    width: 150px;
-}
-
-.message .received {
-    align-self: flex-start;
-    height: 40px;
-    width: 150px;
-    background-color: var(--bg-hover);
-}
-
 .menu>ul {
     display: flex;
-    gap: 10px;
 }
 
 .menu {
@@ -135,16 +113,26 @@ a {
 .contact {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     padding: 8px 5px 8px 12px;
     border-top: 1 px solid var(--bg-chat);
-    gap: 10px;
+}
+
+.online__contact{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.online__contact>span{
+    width: 40px;
+    border-radius: 50%;
 }
 
 .img__text {
     display: flex;
     align-items: center;
-    margin-left: 8px;
+    gap:5px;
+    padding: 5px 8px;
 
 }
 
@@ -167,9 +155,22 @@ span {
     align-self: flex-start;
 }
 
-.img__text>.fa-bell-slash,
-.fa-magnifying-glass {
+i{
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.fa-bell-slash{
+    background-color: var(--bg-hover);
+    color: var(--bg-active);
+}
+
+.img__text>i{
+    align-items: center;
+    justify-content: center;
 }
 
 H2 {
@@ -186,12 +187,15 @@ H2 {
 
 .avatar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
 p {
     font-size: 8px;
+    color: var(--bg-color-write);
+}
+
+i{
     color: var(--bg-color-write);
 }
 
@@ -234,4 +238,23 @@ p {
     font-size: 12px;
     border-radius: 5px;
     padding: 8px;
+    text-align: center;
+}
+
+.message .sent {
+    align-self: flex-end;
+    background-color: var(--bg-chat-user);
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    padding: 5px 8px;
+}
+
+.message .received {
+    align-self: flex-start;
+    height: 40px;
+    width: 150px;
+    background-color: var(--bg-hover);
+    border-radius: 10px;
+    padding: 5px 8px;
 }
