@@ -171,13 +171,37 @@ const app = new Vue({
     data: {
         contacts,
         active: 0,
+        text:'',
     },
     methods: {
-        userMessage: function(){
-            console.log(this.userMessage.value)
-        }
-        //     onEnterClick: function() {
-        //         this.msg = 'on enter event';  
-        // },
+        send() {
+            const cleanerText = this.text.trim()
+
+            if (cleanerText === '') return
+            console.log(this.text)
+            const messages = this.contacts[this.active].messages
+
+            const message = {
+                date: '',
+                message: cleanerText,
+                status: 'sent',
+            }
+            console.log(message)
+
+            this.contacts[this.active].messages.push(message)
+            this.text = '',
+
+                setTimeout(() => {
+                    // console.log(this.contacts)
+                    const message = {
+                        date: '',
+                        message: 'ok',
+                        status: 'received',
+                    }
+                   messages.push(message)
+                }, 1000)
+
+        },
+
     }
 });

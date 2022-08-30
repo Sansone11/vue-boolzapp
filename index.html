@@ -47,7 +47,7 @@
                         <span class="avatar"><img :src="`./assets/${contact.avatar}`" alt=""></span>
                         <div>
                             <h2>{{contact.name}}</h2>
-                            <p>Ultimo accesso</p>
+                            <p>Ultimo accesso...</p>
                         </div>
                     </div>
                     <div class="time">12:00</div>
@@ -146,20 +146,20 @@
                 <div class="message sent"> 
                     
                 </div>
-                <div class="message sent">
-                    come stai?
+                <!-- <div class="message sent">
+                
                 </div>
                 <div class="message received">
-                    ciao
+            
                 </div>
-                <div></div> 
+                <div></div>  -->
             </div>
             <div class="user__card player">
                 <div class="img__text player__img">
                     <span class="avatar"><i class="fa-solid fa-face-smile"></i></span>
                 </div>
                 <div class="write">
-                    <input type="text" v-on:keyup.enter="userMessage" placeholder="Scrivi un messaggio" value="">
+                    <input  type="text" @keyup.enter="send" v-model="text" placeholder="Scrivi un messaggio" value="">
                 </div>
                 <div class="img__text player__img">
                     <span class="avatar"><i class="fa-solid fa-microphone"></i></span>
