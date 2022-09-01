@@ -171,10 +171,11 @@ const app = new Vue({
     data: {
         contacts,
         active: 0,
-        text:'',
-        name:'',
+        text: '',
+        name: '',
+        date: '',
     },
-   
+
     methods: {
         send() {
             const cleanerText = this.text.trim()
@@ -200,19 +201,47 @@ const app = new Vue({
                         message: 'ok',
                         status: 'received',
                     }
-                   messages.push(message)
+                    messages.push(message)
                 }, 1000)
 
         },
+        lastMessageOf(chat){
+            const {messages} = chat
+            const lastIndex = messages.length-1
+            if(lastIndex >=0){
+                return messages[lastIndex]
+            }
+            return null
+        },
+        
+        // this.contacts[i].messages.push({
+        //     message: this.newSent,
+        //     status: 'sent',
+        //     date: stabilireOra(),
+        // })
+    // function stabilireOra() {
+    
+    //     let currentdate = new Date();
+    //     let datetime = currentdate.getDate() + "/"
+    //     + (currentdate.getMonth() + 1) + "/"
+    //     + currentdate.getFullYear() + "  "
+    //     + currentdate.getHours() + ":"
+    //     + currentdate.getMinutes() + ":"
+    //     + currentdate.getSeconds();
+    
+    //     console.log(datetime)
+    // return datetime
+    // }
 
     },
-    // computed: {
-    //     filterContacts() {
-    //         return contacts.filter((contact) => {
-    //             return contact.name.toLowerCase().includes(this.name.toLowerCase());
-    //         });
-    //     }
-    // }
+   
+    computed: {
+        filterContacts() {
+            return contacts.filter((contact) => {
+             return contact.name.toLowerCase().includes(this.name.toLowerCase());
+             });
+         }
+    }
 
 });
 

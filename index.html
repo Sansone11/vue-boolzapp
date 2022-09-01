@@ -46,7 +46,7 @@
                 <li
                     class="user__card"
                     @click="active=index"
-                    v-for="contact,index in contacts"
+                    v-for="contact,index in filterContacts"
                     :class="active===index ? 'active':''"
                     v-show="contact.name.toLowerCase().includes(name.toLowerCase())"
                 >
@@ -54,10 +54,10 @@
                         <span class="avatar"><img :src="`./assets/${contact.avatar}`" alt=""></span>
                         <div>
                             <h2>{{contact.name}}</h2>
-                            <p>Ultimo accesso...</p>
+                            <p>{{lastMessageOf(contact)?.message}}</p>
                         </div>
                     </div>
-                    <div class="time">12:00</div>
+                    <div class="time">{{lastMessageOf(contact)?.date}}</div>
                 </li>
                 <!-- <li>
                     <div class="user__card">
